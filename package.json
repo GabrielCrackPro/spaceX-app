@@ -1,0 +1,20 @@
+{
+  "name": "spacex-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielCrackPro/spaceX-app.git"
+  },
+  "keywords": [],
+  "author": "GabrielCrackPro <gabrielcrackpro2001@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GabrielCrackPro/spaceX-app/issues"
+  },
+  "homepage": "https://github.com/GabrielCrackPro/spaceX-app#readme"
+}
