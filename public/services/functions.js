@@ -69,5 +69,31 @@ const functions = {
   </table>
   `;
   },
+  getCapsules: async (element) => {
+    const capsulesInfo = await functions.getData(links.capsules);
+    console.log(capsulesInfo);
+    capsulesInfo.forEach((capsule) => {
+      element.innerHTML += `
+      <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-12">
+          <div class="card-header bg-primary">
+            <h5 class="card-title text-center text-white">#${capsule.serial}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Land Landings: ${capsule.land_landings}</p>
+            <p class="card-text">Water Landings: ${capsule.water_landings}</p>
+            <p class="card-text">Reused: ${capsule.reuse_count}</p>
+            <p class="card-text">Status: ${capsule.status}</p>
+            <p class="card-text">Type: ${capsule.type}</p>
+            <p class="card-text">Last Update: ${capsule.last_update}</p>
+            <p class="card-text">Launches ID: <a href="${links.launches}/${capsule.launches}">${capsule.launches}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+      `;
+    });
+  },
 };
 export default functions;
