@@ -95,5 +95,28 @@ const functions = {
       `;
     });
   },
+  getCrew: async (element) => {
+    const crewInfo = await functions.getData(links.crew);
+    console.log(crewInfo);
+    crewInfo.forEach((crewMember) => {
+      element.innerHTML += `
+      <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-12">
+          <div class="card-header bg-primary">
+            <h5 class="card-title text-center text-white">${crewMember.name}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Agency: ${crewMember.agency}</p>
+            <p class="card-text">Status: ${crewMember.status}</p>
+            <p class="card-text">Launch ID: <a href="${links.launches}/${crewMember.launches}">${crewMember.launches}</a></p>
+            <p class="card-text">Wikipedia: <a href="${crewMember.wikipedia}">${crewMember.name}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+      `;
+    });
+  },
 };
 export default functions;

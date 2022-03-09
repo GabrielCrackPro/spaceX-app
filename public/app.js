@@ -2,6 +2,7 @@ import functions from "./services/functions.js";
 
 const companyInfoContainer = document.querySelector(".company-info");
 const capsulesContainer = document.querySelector(".capsule-info");
+const crewContainer = document.querySelector(".crew-info");
 
 window.onload = async () => {
   const url = window.location.href;
@@ -9,5 +10,7 @@ window.onload = async () => {
     await functions.getCompanyInfo(companyInfoContainer);
   } else if (url.endsWith("capsules.html")) {
     await functions.getCapsules(capsulesContainer);
+  } else if (url.endsWith("crew.html")) {
+    await functions.getCrew(crewContainer);
   }
 };
