@@ -123,9 +123,14 @@ const functions = {
     console.log(dragonsInfo);
     dragonsInfo.forEach((dragon) => {
       element.innerHTML += `
-      <div class="card mb-3">
+      <div class="card text-centermb-3">
       <div class="row no-gutters">
-        <div class="col-md-12">
+      <div class="col-md-6">
+       <img src="${
+         dragon.flickr_images[2]
+       }" class="card-img-topp" alt="img" height="auto%" width="100%">
+      </div>
+        <div class="col-md-6">
           <div class="card-header bg-primary">
             <h5 class="card-title text-center text-white">${dragon.name}</h5>
           </div>
@@ -184,6 +189,9 @@ const functions = {
             <p class="card-text"><span class="bg-primary text-white">Description: </span>${
               dragon.description
             }</p>
+            <p class="card-text"><span class="bg-primary text-white">Wikipedia: </span><a href="${
+              dragon.wikipedia
+            }">${dragon.name}</a></p>
           </div>
         </div>
       </div>
