@@ -199,5 +199,30 @@ const functions = {
       `;
     });
   },
+  getLandpads: async (element) => {
+    const landpadsInfo = await functions.getData(links.landpads);
+    console.log(landpadsInfo);
+    landpadsInfo.forEach((landpad) => {
+      element.innerHTML += `
+      <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-12">
+          <div class="card-header bg-primary">
+            <h5 class="card-title text-center text-white">${landpad.name} - ${landpad.full_name}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><span class="bg-primary text-white">Landing Attempts: </span>${landpad.landing_attempts}</p>
+            <p class="card-text"><span class="bg-primary text-white">Landing Successes: </span>${landpad.landing_successes}</p>
+            <p class="card-text"><span class="bg-primary text-white">Type: </span>${landpad.type}</p>
+            <p class="card-text"><span class="bg-primary text-white">Status: </span>${landpad.status}</p>
+            <p class="card-text"><span class="bg-primary text-white">Location: </span> <span>${landpad.locality},${landpad.region} </span><a href="https://www.google.com/maps/place/${landpad.latitude}+${landpad.longitude}" target="blank" class="text-primary">View</a></p>
+            <p class="card-text"><span class="bg-primary text-white">Wikipedia: </span><a href="${landpad.wikipedia}" target="blank">View</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+      `;
+    });
+  },
 };
 export default functions;

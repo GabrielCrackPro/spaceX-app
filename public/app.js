@@ -4,6 +4,7 @@ const companyInfoContainer = document.querySelector(".company-info");
 const capsulesContainer = document.querySelector(".capsule-info");
 const crewContainer = document.querySelector(".crew-info");
 const dragonsContainer = document.querySelector(".dragon-info");
+const landpadsContainer = document.querySelector(".landpads-info");
 
 window.onload = async () => {
   const url = window.location.href;
@@ -15,5 +16,7 @@ window.onload = async () => {
     await functions.getCrew(crewContainer);
   } else if (url.endsWith("dragons.html")) {
     await functions.getDragons(dragonsContainer);
+  } else if (url.endsWith("landpads.html")) {
+    await functions.getLandpads(landpadsContainer);
   }
 };
